@@ -1,0 +1,191 @@
+.Banner_contact {
+  background-image: url("../asset/image/banner.png");
+  background-position: cover;
+  width: 100%;
+  height: fit-content;
+
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #d8d8d8d8;
+  padding: 100px 50px !important;
+}
+
+.Banner_contact > div {
+  padding: 0;
+}
+
+.Banner_contact > div > div:first-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 50px;
+  gap: 16px;
+}
+
+.Banner_contact > div > div > img {
+  width: 150px;
+}
+
+.Banner_contact > div > div h1 {
+  font-size: 48px;
+  text-transform: uppercase;
+  color: #fff;
+  font-family: "Gotham";
+  font-weight: 700;
+}
+
+.container-contact {
+  background-color: #fff;
+  padding: 100px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.container-contact > div {
+  width: 46%;
+}
+
+.container-contact div img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+}
+
+.container-contact > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+h3 {
+  font-size: 36px;
+  color: #bd945f;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact-form div {
+  width: 100%;
+}
+
+input {
+  width: 100%;
+  border: 2px solid #bd945f;
+  padding: 12px;
+  font-size: 16px;
+  width: 100%;
+  font-family: "Gotham";
+  font-weight: 400;
+}
+
+.error {
+  left: 0;
+  bottom: -10px;
+  font-size: 14px;
+  font-family: "Gotham";
+  font-weight: 400;
+  color: red;
+}
+
+[data-lastpass-icon-root] {
+  display: none;
+}
+
+#submit-contact {
+  width: 20%;
+  padding: 16px;
+  background-color: #bd945f;
+  color: #fff;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .container-contact {
+    padding: 25px;
+  }
+
+  .container-contact > div {
+    width: 48%;
+  }
+
+  #submit {
+    width: 40%;
+  }
+
+  .container-contact div img {
+    height: 420px;
+  }
+
+  .Banner_contact > div > div h1 {
+    font-size: 38px;
+  }
+
+  h3 {
+    font-size: 28px;
+  }
+  input {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container-contact {
+    padding: 15px;
+    gap: 12px;
+  }
+  .container-contact > div {
+    width: 100%;
+  }
+  .container-contact div img {
+    height: 250px;
+  }
+  h3 {
+    font-size: 24px;
+    text-align: center;
+  }
+  #submit {
+    width: 40%;
+  }
+  input {
+    font-size: 14px;
+  }
+  .container-contact > div:last-child {
+    gap: 24px;
+  }
+  .Banner_contact > div > div h1 {
+    font-size: 28px;
+  }
+
+  .Banner_contact > div > div > img {
+    width: 100px;
+  }
+}
+
+.modal-open {
+  padding-right: 0 !important;
+}
+
+.fade.modal.show {
+  width: 100% !important;
+  height: 100vh !important;
+  overflow-y: hidden !important;
+}
+
+.modal.show .modal-dialog {
+  height: 100% !important;
+  margin: 0 auto !important;
+}
+.modal-content {
+  top: 50%;
+  transform: translateY(-50%);
+}

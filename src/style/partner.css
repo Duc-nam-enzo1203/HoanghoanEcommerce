@@ -1,0 +1,141 @@
+.Banner_partner {
+  background-image: url("../asset/image/banner.png");
+  background-position: cover;
+  width: 100%;
+  height: fit-content;
+
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #d8d8d8d8;
+  padding: 100px 50px !important;
+}
+
+.Banner_partner > div {
+  padding: 0;
+}
+
+.Banner_partner > div > div:first-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 50px;
+  gap: 16px;
+}
+
+.Banner_partner > div > div > img {
+  width: 150px;
+}
+
+.Banner_partner > div > div h1 {
+  font-size: 48px;
+  text-transform: uppercase;
+  color: #fff;
+  font-family: "Gotham";
+  font-weight: 700;
+}
+
+.container-partner {
+  background-color: #fff;
+  padding: 100px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 42px;
+}
+
+.container-partner > div {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container-partner > div > img {
+  width: 25%;
+}
+
+.content-partner {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 65%;
+}
+
+.content-partner h3 {
+  font-size: 28px;
+  color: #bd945f;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.content-partner p {
+  font-size: 16px;
+  color: #000;
+  font-family: "Gotham";
+  font-weight: 400;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .container-partner {
+    padding: 50px 25px;
+  }
+
+  .content-partner h3 {
+    font-size: 24px;
+  }
+
+  .content-partner p {
+    font-size: 14px;
+  }
+
+  .container-partner > div > img {
+    width: 30%;
+  }
+
+  .Banner_partner > div > div h1 {
+    font-size: 38px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .Banner_partner > div > div h1 {
+    font-size: 28px;
+  }
+
+  .Banner_partner > div > div > img {
+    width: 100px;
+  }
+  .container-partner {
+    padding: 30px 15px;
+  }
+  .content-partner h3 {
+    font-size: 22px;
+  }
+
+  .content-partner p {
+    font-size: 14px;
+  }
+
+  .container-partner > div {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .container-partner > div > img {
+    width: 50%;
+    margin: auto;
+  }
+
+  .content-partner {
+    width: 100%;
+  }
+
+  .content-partner h3,
+  .content-partner p {
+    text-align: center;
+  }
+}

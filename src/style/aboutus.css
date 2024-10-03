@@ -1,0 +1,249 @@
+.Banner_info {
+  background-image: url("../asset/image/banner.png");
+  background-position: cover;
+  width: 100%;
+  height: fit-content;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #d8d8d8d8;
+  padding: 100px 50px !important;
+}
+
+.Banner_info > div {
+  padding: 0;
+}
+
+.Banner_info > div > div:first-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 50px;
+  gap: 16px;
+}
+
+.Banner_info > div > div > img {
+  width: 150px;
+}
+
+.Banner_info > div > div h1 {
+  font-size: 48px;
+  text-transform: uppercase;
+  color: #fff;
+  font-family: "Gotham";
+  font-weight: 700;
+}
+
+.container-introduce {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  padding: 50px;
+  gap: 50px;
+}
+
+.container-content-info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.container-establish {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  justify-content: space-between;
+}
+
+.container-vision,
+.container-misson {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.container-establish > .col-6 {
+  overflow: hidden;
+  padding: 0;
+  width: 48%;
+  height: 300px;
+}
+
+.container-establish > .col-6 > img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: all 0.5s ease-in-out;
+}
+
+.container-establish > .col-6 > img:hover {
+  transform: scale(1.1);
+}
+
+.container-establish > .col-6:last-child {
+  display: flex;
+  flex-direction: column;
+  align-self: start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.container-vision > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.container-vision > div:last-child > img {
+  width: 100%;
+}
+
+.container-vision > div:last-child > p {
+  font-size: 16px;
+  color: #000;
+  font-family: "Gotham";
+  font-weight: 400;
+  text-align: center;
+}
+
+.container-misson > div:nth-child(2),
+.container-misson > div:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.box-content-info {
+  border: 2px solid #bd945f;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  width: 49% !important;
+  gap: 12px;
+}
+
+.box-content-info > img {
+  width: 25%;
+}
+
+.content-mission {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.content-mission h3 {
+  font-family: "Gotham";
+  font-size: 20px;
+  color: #bd945f;
+  font-weight: 400;
+}
+
+.content-mission p {
+  font-family: "Gotham";
+  font-size: 16px;
+  color: #000;
+  font-weight: 400;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .Banner_info > div > div h1 {
+    font-size: 38px;
+  }
+
+  .Banner_info > div > div > img {
+    width: 100px;
+  }
+
+  .container-establish {
+    gap: 12px;
+  }
+
+  .container-establish div {
+    width: 100%;
+  }
+
+  .container-establish > .col-6:last-child {
+    height: fit-content;
+  }
+
+  .container-establish > .col-6 > img {
+    width: 100%;
+  }
+
+  .container-vision > div:last-child > p {
+    font-size: 14px;
+  }
+
+  .content-mission p {
+    font-size: 14px;
+  }
+
+  .container-misson > div:nth-child(2),
+  .container-misson > div:last-child {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .box-content-info {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .Banner_info > div > div h1 {
+    font-size: 28px;
+  }
+
+  .Banner_info > div > div > img {
+    width: 100px;
+  }
+
+  .container-introduce {
+    padding: 30px 15px;
+  }
+
+  .container-establish > .col-6 {
+    width: 100%;
+  }
+
+  .container-establish > .col-6 > img {
+    width: 100%;
+  }
+
+  .container-establish {
+    gap: 12px;
+    flex-direction: column;
+  }
+
+  .container-vision > div:last-child > img {
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .container-misson > div:nth-child(2),
+  .container-misson > div:last-child {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .box-content-info {
+    width: 100%;
+  }
+
+  .container-vision > div:last-child > p {
+    font-size: 14px;
+  }
+
+  .content-mission p {
+    font-size: 14px;
+  }
+}
