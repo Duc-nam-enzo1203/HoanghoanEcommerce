@@ -90,7 +90,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      <Header renderPosts={news} />
       <ScrollToTop />
       <Routes>
         {publicRoutes.map((route, index) => {

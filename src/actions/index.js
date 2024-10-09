@@ -55,3 +55,15 @@ export const fetchProducts = () => {
     }
   };
 };
+
+// action cho chức năng tìm kiếm
+export const act_search_product_and_post = (searchTerm, products, posts) => {
+  return {
+    type: types.SEARCH_PRODUCT_AND_POST,
+    payload: {
+      searchTerm, // Từ khóa tìm kiếm
+      products, // Kết quả tìm kiếm sản phẩm
+      posts, // Kết quả tìm kiếm bài viết
+    },
+  };
+};

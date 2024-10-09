@@ -27,7 +27,6 @@ export default function HomePage({
   // section 2
   const dispatch = useDispatch();
   const { listProduct, error } = useSelector((state) => state.listProduct);
-  console.log(listProduct);
 
   useEffect(() => {
     dispatch(fetchProducts()); // Gọi action khi component mount
@@ -65,18 +64,18 @@ export default function HomePage({
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToShow: 2,
+          slidesToScroll: 1,
           infinite: true,
-          dots: true,
+          dots: false,
         },
       },
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 1,
         },
       },
       {
@@ -122,7 +121,7 @@ export default function HomePage({
 
   const elementsBenefit = benefits.map((item, index) => {
     return (
-      <div className="box-item-policy" key={index}>
+      <div className="box-item-policy w-100 bg-white" key={index}>
         <img src={item.img} alt="" />
         <div className="title-policy">
           <h5>{item.title}</h5>
@@ -133,9 +132,7 @@ export default function HomePage({
   });
 
   let elementsImage = imageAbout.map((item, index) => {
-    return (
-      <img key={index} src={item.img} alt="" className="col-3 img-lightbox" />
-    );
+    return <img key={index} src={item.img} alt="" className="col-3 p-2" />;
   });
 
   // section 4
@@ -154,7 +151,11 @@ export default function HomePage({
   let elementFirst = renderPosts.map((item, index) => {
     if (index === 0) {
       return (
-        <div key={index} style={{ position: "relative", height: "40rem" }}>
+        <div
+          key={index}
+          className="box-post-first"
+          style={{ position: "relative", height: "100%" }}
+        >
           <img
             src={item.image}
             alt={item.title}
@@ -207,7 +208,7 @@ export default function HomePage({
     responsive: [
       {
         breakpoint: 1024,
-        settings: {
+        settingsPartner: {
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
@@ -215,17 +216,17 @@ export default function HomePage({
         },
       },
       {
-        breakpoint: 600,
-        settings: {
+        breakpoint: 768,
+        settingsPartner: {
           slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
+          slidesToScroll: 1,
+          initialSlide: 1,
         },
       },
       {
         breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
+        settingsPartner: {
+          slidesToShow: 2,
           slidesToScroll: 1,
         },
       },
@@ -234,13 +235,13 @@ export default function HomePage({
 
   return (
     <>
-      <section id="gioithieu" className="Block container_1">
-        <div className="container-lg">
-          <div>
+      <section className="Block container_1 d-flex flex-column justify-content-between">
+        <div className="container-lg p-0 d-flex flex-column justify-content-between h-100 gap-4">
+          <div className="w-80 d-flex flex-column gap-3 box_banner">
             <h1>
               Thế giới nội thất số 1 Việt Nam
               <br className="br-desktop" />
-              <span>Hoàng Hoan</span>
+              <span> Hoàng Hoan</span>
             </h1>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
@@ -252,80 +253,86 @@ export default function HomePage({
               <span>Liên hệ ngay</span>
             </button>
           </div>
-          <div className="container-categories-product container-md">
-            <div className="container-categories">{elementTask}</div>
+          <div className="container-md bg-white p-lg-4 p-3">
+            <div className="d-flex justify-content-evenly flex-wrap">
+              {elementTask}
+            </div>
           </div>
         </div>
       </section>
       <section id="sanpham" className="Block container_2">
-        <div className="container-lg">
+        <div className="container-lg p-0 flex-column d-flex position-relative gap-3 justify-content-end">
           <TitleSection title={"Sản phẩm nổi bật"} />
           <div className="sliders-show-product d-flex justify-content-lg-between">
-            {/* <Slider
-              style={{ width: "100%" }}
-              data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'
-              {...settings}
-            > */}
-            {elementProducts}
-            {/* </Slider> */}
+            <Slider {...settings}>{elementProducts}</Slider>
           </div>
         </div>
       </section>
-      <section id="container" className="Block container_3">
-        <div id="overlay" />
-        <div className="container-lg">
-          <div className="container-about">
-            <TitleSection title={"Về chúng tôi"} />
-            <div className="row">
-              <div className="col-6">
-                <img src="./img/ve-chung-toi/ve-chung-toi.jpg" alt="" />
-              </div>
-              <div className="col-6">
-                <h3>
-                  Nội thất <span>Hoàng Hoan</span>
-                  <br />
-                  Uy tín song hành chất lượng
-                </h3>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Consequatur repudiandae tempore quo odit eveniet aliquam
-                  architecto iusto nisi atque, quae omnis dolorum, sit at
-                  laboriosam aut nulla itaque qui soluta.
-                  <br />
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
-                  at, in nulla aut voluptatibus quis animi fugit est iste.
-                  Quibusdam unde qui, consequatur eveniet impedit deleniti
-                  ratione nihil autem rem?
-                </p>
-                <div className="row">{elementsImage}</div>
-              </div>
+      <section
+        id="container"
+        className="Block container_3 d-flex flex-column gap-lg-5 gap-4"
+      >
+        <div className="container-about container p-0">
+          <TitleSection title={"Về chúng tôi"} />
+          <div className="row d-flex">
+            <div className="col-12 col-md-12 col-lg-6 p-2 p-lg-auto">
+              <img
+                src="./img/ve-chung-toi/ve-chung-toi.jpg"
+                alt=""
+                className="w-100 h-100 object-fit-cover"
+              />
+            </div>
+            <div className="col-12 col-md-12 col-lg-6 p-2 gap-3 d-flex flex-column ">
+              <h4>
+                Nội thất <span>Hoàng Hoan</span>
+                <br />
+                Uy tín song hành chất lượng
+              </h4>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Consequatur repudiandae tempore quo odit eveniet aliquam
+                architecto iusto nisi atque, quae omnis dolorum, sit at
+                laboriosam aut nulla itaque qui soluta.
+                <br />
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
+                at, in nulla aut voluptatibus quis animi fugit est iste.
+                Quibusdam unde qui, consequatur eveniet impedit deleniti ratione
+                nihil autem rem?
+              </p>
+              <div className="row container_img">{elementsImage}</div>
             </div>
           </div>
-          <div className="container-about">
-            <div className="title" style={{ paddingBottom: "12px" }}>
-              <h2>Tại sao nên chọn Hoàng Hoan</h2>
-            </div>
-            <div className="container-policy">
-              <div className="grid grid-cols-4 grid-rows-5 gap-4">
-                <div className="col-span-2">{elementsBenefit[0]}</div>
-                <div className="col-span-2 ">{elementsBenefit[1]}</div>
-                <div className="col-span-2 ">{elementsBenefit[2]}</div>
-                <div className="col-span-2 ">{elementsBenefit[3]}</div>
-              </div>
+        </div>
+        <div className="container-about container p-0">
+          <div className="title" style={{ paddingBottom: "12px" }}>
+            <h2>Tại sao nên chọn Hoàng Hoan</h2>
+          </div>
+          <div className="container-policy">
+            <div className="d-flex flex-wrap">
+              <div className="col-12 col-md-6 p-2">{elementsBenefit[0]}</div>
+              <div className="col-12 col-md-6 p-2">{elementsBenefit[1]}</div>
+              <div className="col-12 col-md-6 p-2">{elementsBenefit[2]}</div>
+              <div className="col-12 col-md-6 p-2">{elementsBenefit[3]}</div>
             </div>
           </div>
         </div>
       </section>
       <section id="tintuc" className="Block container_4">
-        <div className="container-lg">
+        <div className="container-lg p-0">
           <TitleSection title={"Tin tức"} />
-          <Container>
-            <Row>
-              <Col sm={8}>{elementFirst}</Col>
-              <Col sm={4} className="list-new">
+          <Container className="mt-lg-4 p-0">
+            <Row className="d-flex">
+              <Col className="col-12 col-lg-8 boxFirst_post">
+                {elementFirst}
+              </Col>
+              <Col className="col-12 col-lg-4 list-new mt-3 mt-lg-0 p-0 ">
                 {elementsNew}
                 <button className="btn-preview " style={{ marginLeft: "12px" }}>
-                  <Link to="/NewsPage.js" style={{ textDecoration: "none" }}>
+                  <Link
+                    to="/NewsPage.js"
+                    className="p-0 m-0 h-100"
+                    style={{ textDecoration: "none" }}
+                  >
                     <span>
                       Xem thêm
                       <i className="fa-solid fa-arrow-right-long" />
@@ -338,15 +345,14 @@ export default function HomePage({
         </div>
       </section>
       <section id="doitac" className="Block container_5">
-        <div className="container-lg">
+        <div className="container-lg  p-0">
           <TitleSection title={"Đối tác"} />
-          {/* <div className="logo-doitac row seven-cols">{elementPartners}</div> */}
           <Slider {...settingsPartner}>{elementPartners}</Slider>
         </div>
       </section>
       <section id="lienhe" className="Block container_6">
         <img src="./img/lienhe-1-removebg-preview.png" alt="ghe" />
-        <div className="container-lg row">
+        <div className="container-lg row  p-0">
           <div className="col-2" />
           <div className="col-5 title-contact">
             <h5>Trải nghiệm dịch vụ</h5>
@@ -359,7 +365,7 @@ export default function HomePage({
             <h5>Thông tin liên hệ</h5>
             <div className="form">
               <form action="" method="post" className="row" id="form">
-                <div className="form-group col-9">
+                <div className="form-group col-lg-9 col-12">
                   <input
                     type="text"
                     placeholder="Email/Phone *"
@@ -369,7 +375,7 @@ export default function HomePage({
                   />
                   <p className="error" id="invalid_email" />
                 </div>
-                <div className="submit col-3">
+                <div className="submit col-lg-3 col-12">
                   <input type="submit" defaultValue="Gửi" id="submit" />
                 </div>
               </form>

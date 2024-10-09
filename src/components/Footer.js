@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -28,19 +29,22 @@ export default function Footer() {
           <h4>Về chúng tôi</h4>
           <ul>
             <li>
-              <a href="#gioithieu">Giới thiệu</a>
+              <Link to="/">Trang chủ</Link>
             </li>
             <li>
-              <a href="#sanpham">Sản phẩm</a>
+              <Link to="/Information">Giới thiệu</Link>
             </li>
             <li>
-              <a href="#tintuc">Tin tức</a>
+              <Link to="/Product">Sản phẩm</Link>
             </li>
             <li>
-              <a href="#doitac">Đối tác</a>
+              <Link to="/News">Tin tức</Link>
             </li>
             <li>
-              <a href="#lienhe">Liên hệ</a>
+              <Link to="/Partner">Đối tác</Link>
+            </li>
+            <li>
+              <Link to="/Contact">Liên hệ</Link>
             </li>
           </ul>
         </div>

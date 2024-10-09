@@ -31,7 +31,7 @@ const Product = ({ product }) => {
   };
 
   return (
-    <Card key={id}>
+    <Card key={id} className="m-0 p-0 w-100">
       <Card.Img
         variant="top"
         src={img}
@@ -39,7 +39,9 @@ const Product = ({ product }) => {
       />
       <Card.Body>
         <Card.Title>
-          <Link to={`/Product/${slugifyText(title)}`}>{title}</Link>
+          <Link to={`/Product/${slugifyText(title)}`} className="p-0 m-0">
+            {title}
+          </Link>
         </Card.Title>
         <Card.Text>
           <div

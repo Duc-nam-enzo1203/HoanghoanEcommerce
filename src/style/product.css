@@ -171,9 +171,9 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-  /* .banner_product {
-    height: fit-content;
-  } */
+  .card {
+    width: 100% !important;
+  }
 
   .carousel-caption-content h5 {
     font-size: 72px;

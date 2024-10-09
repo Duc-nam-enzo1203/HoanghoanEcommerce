@@ -6,6 +6,8 @@ import Contact from "../pages/ContactPage.js";
 import News from "../pages/NewPage.js";
 import SingleProduct from "../pages/SingleProduct.js";
 import SingleNew from "../pages/SingleNew.js";
+import Checkout from "../pages/CheckoutPage.js";
+import SearchResultPage from "../pages/SearchResultPage.js";
 
 const publicRoutes = [
   { path: "/", component: Home },
@@ -16,5 +18,7 @@ const publicRoutes = [
   { path: "/News/:tittle", component: SingleNew },
   { path: "/Partner", component: Partner },
   { path: "/Contact", component: Contact },
+  { path: "/Checkout", component: Checkout },
+  { path: "/search/:name", component: SearchResultPage },
 ];
 export default publicRoutes;

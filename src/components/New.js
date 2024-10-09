@@ -3,9 +3,9 @@ import { Container, Row, Col } from "react-bootstrap";
 
 export default function New({ img, title, description }) {
   return (
-    <Container style={{ height: "11rem" }}>
-      <Row style={{ height: "100%" }}>
-        <Col sm={6}>
+    <Container className="p-0 m-0">
+      <Row>
+        <Col className="col-4">
           <img
             src={img}
             alt=""
@@ -13,7 +13,7 @@ export default function New({ img, title, description }) {
           />
         </Col>
         <Col
-          sm={6}
+          className="col-8"
           style={{ display: "flex", flexDirection: "column", gap: "8px" }}
         >
           <h6 style={{ color: "#bd945f" }}>{title}</h6>

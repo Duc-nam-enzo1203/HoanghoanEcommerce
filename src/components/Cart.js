@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import ItemCart from "../components/ItemCart";
-import Notify from "./Notify";
 import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 function ShoppingCart() {
   const [show, setShow] = useState(false);
@@ -40,14 +40,25 @@ function ShoppingCart() {
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Giỏ hàng</Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Body
-          style={{ display: "flex", flexDirection: "column", gap: "16px" }}
-        >
+        <Offcanvas.Body style={{ display: "flex", flexDirection: "column" }}>
           {elementItemCart}
-          <button className="btn-primary" style={{ width: "100%" }}>
-            <span>Update</span>
+          <button
+            className="btn-primary"
+            style={{ width: "100%", marginTop: "6px" }}
+            onClick={handleClose}
+          >
+            <Link
+              to="/Checkout"
+              style={{
+                padding: "0px",
+                margin: "0px",
+              }}
+            >
+              <span style={{ width: "100%", height: "100%" }}>
+                Tông tiền - Thanh toán
+              </span>
+            </Link>
           </button>
-          <Notify />
         </Offcanvas.Body>
       </Offcanvas>
     </>

@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Button, Card, Form } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 import slugifyText from "../utils/slugifyText";
-// import "bootstrap/dist/css/bootstrap.min.css";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useDispatch } from "react-redux";
@@ -12,8 +11,19 @@ import {
   act_update_item,
 } from "../actions/index";
 import { MSG_ADD } from "../constants/messages";
+import { useSelector } from "react-redux";
+import { fetchProducts } from "../actions/index";
 
 const SingleProduct = ({ renderProducts }) => {
+  // const dispatch = useDispatch();
+  const { listProduct, error } = useSelector((state) => state.listProduct);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchProducts()); // Gọi action khi component mount
+  }, [dispatch]);
+
   const { title } = useParams(); // Lấy title từ URL
 
   // Tìm sản phẩm theo slug của title
@@ -22,10 +32,13 @@ const SingleProduct = ({ renderProducts }) => {
   );
 
   const [quantity, setQuantity] = useState(1);
-  const dispatch = useDispatch();
 
   const buyItem = (product, quantity) => {
-    dispatch(act_buy_item(product, quantity));
+    const updatedProduct = {
+      ...product,
+      img: `http://apixm.devmaster.vn${product.image}`, // Thay thế đường dẫn ảnh
+    };
+    dispatch(act_buy_item(updatedProduct, quantity));
 
     const changeNotify = (content) => {
       dispatch(act_change_notify(content));
@@ -46,15 +59,13 @@ const SingleProduct = ({ renderProducts }) => {
 
   const RelatedProducts = renderProducts.map((item, index) => {
     if (item.cid === product.cid) {
-      console.log(item, product);
-
       return (
         <Col key={index} className="mb-5">
           <Card className="h-100 w-100">
             <img
               className="card-img-top"
               src={`http://apixm.devmaster.vn${item.image}`}
-              style={{ height: "200px", objectFit: "cover" }}
+              style={{ height: "100%", objectFit: "cover" }}
               alt="..."
             />
             <div className="card-body p-4">
@@ -148,7 +159,7 @@ const SingleProduct = ({ renderProducts }) => {
       <section className="py-5 bg-light">
         <Container className="px-4 px-lg-5 mt-5">
           <h2 className="fw-bolder mb-4">Related products</h2>
-          <Row className="gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+          <Row className="gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 ">
             {RelatedProducts}
           </Row>
         </Container>
