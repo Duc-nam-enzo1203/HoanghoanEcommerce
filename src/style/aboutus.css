@@ -9,7 +9,7 @@
   flex-direction: column;
   justify-content: space-between;
   background-color: #d8d8d8d8;
-  padding: 100px 50px !important;
+  padding: 100px 50px;
 }
 
 .Banner_info > div {
@@ -117,16 +117,10 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  gap: 16px;
 }
 
-.box-content-info {
-  border: 2px solid #bd945f;
-  padding: 16px;
-  display: flex;
-  align-items: center;
-  width: 49% !important;
-  gap: 12px;
+.box-content-info > div {
+  border: 1px solid #bd945f;
 }
 
 .box-content-info > img {
@@ -187,12 +181,6 @@
     font-size: 14px;
   }
 
-  .container-misson > div:nth-child(2),
-  .container-misson > div:last-child {
-    flex-direction: column;
-    gap: 24px;
-  }
-
   .box-content-info {
     width: 100%;
   }
@@ -227,12 +215,6 @@
   .container-vision > div:last-child > img {
     height: 200px;
     object-fit: cover;
-  }
-
-  .container-misson > div:nth-child(2),
-  .container-misson > div:last-child {
-    flex-direction: column;
-    gap: 24px;
   }
 
   .box-content-info {

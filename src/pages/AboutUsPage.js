@@ -2,6 +2,49 @@ import React from "react";
 import "../style/aboutus.css";
 
 export default function AboutUsPage() {
+  const dataDestiny = [
+    {
+      img: "../img/loai-sp/icon-cau-thang.png",
+      title: "Với xã hội",
+      description:
+        "Hài hòa lợi ích doanh nghiệp với lợi ích xã hội, tích cực cùng cộng đồng xây dựng môi trường sống bền vững",
+    },
+    {
+      img: "../img/loai-sp/icon-phong-bep.png",
+      title: "Với điện tử",
+      description:
+        "Hàng hòa lên điện thoại, điện thoại thông minh, điện thoại di động, điện thoại di động điện tử",
+    },
+    {
+      img: "../img/loai-sp/icon-do-trang-tri.png",
+      title: "Với nhân viên",
+      description:
+        "Hướng hòa lên điện thoại, điện thoại thông minh, điện thoại di động, điện thoại di động điện tử",
+    },
+    {
+      img: "../img/loai-sp/icon-phong-khach.png",
+      title: "Với nhân viên",
+      description:
+        "Hướng hòa lên điện thoại, điện thoại thông minh, điện thoại di động, điện thoại di động điện tử",
+    },
+  ];
+
+  const elementsDestiny = dataDestiny.map((item, index) => {
+    return (
+      <div className="box-content-info col-lg-6 col-12 p-2" key={index}>
+        <div className="m-2 d-flex align-items-center gap-2 p-2">
+          <img src={item.img} alt="" className="w-25" />
+          <div className="content-mission">
+            <h4 style={{ fontWeight: "bold", color: "#bd945f" }}>
+              {item.title}
+            </h4>
+            <p>{item.description}</p>
+          </div>
+        </div>
+      </div>
+    );
+  });
+
   return (
     <section id="gioithieu" className="Block Banner_info">
       <div className="container-lg">
@@ -64,50 +107,7 @@ export default function AboutUsPage() {
             <div className="title">
               <h2>Xứ mệnh</h2>
             </div>
-            <div>
-              <div className="box-content-info col-6">
-                <img src="../img/loai-sp/icon-cau-thang.png" alt="" />
-                <div className="content-mission">
-                  <h3>Với xã hội</h3>
-                  <p>
-                    Hài hòa lợi ích doanh nghiệp với lợi ích xã hội, tích cực
-                    cùng cộng đồng xây dựng môi trường sống bền vững
-                  </p>
-                </div>
-              </div>
-              <div className="box-content-info col-6">
-                <img src="../img/loai-sp/icon-do-trang-tri.png" alt="" />
-                <div className="content-mission">
-                  <h3>Với nhân viên</h3>
-                  <p>
-                    Hài hòa lợi ích doanh nghiệp với lợi ích xã hội, tích cực
-                    cùng cộng đồng xây dựng môi trường sống bền vững
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div className="box-content-info col-6">
-                <img src="../img/loai-sp/icon-phong-bep.png" alt="" />
-                <div className="content-mission">
-                  <h3>Với xã hội</h3>
-                  <p>
-                    Hài hòa lợi ích doanh nghiệp với lợi ích xã hội, tích cực
-                    cùng cộng đồng xây dựng môi trường sống bền vững
-                  </p>
-                </div>
-              </div>
-              <div className="box-content-info col-6">
-                <img src="../img/loai-sp/icon-phong-khach.png" alt="" />
-                <div className="content-mission">
-                  <h3>Với nhân viên</h3>
-                  <p>
-                    Hài hòa lợi ích doanh nghiệp với lợi ích xã hội, tích cực
-                    cùng cộng đồng xây dựng môi trường sống bền vững
-                  </p>
-                </div>
-              </div>
-            </div>
+            <div>{elementsDestiny}</div>
           </div>
         </div>
       </div>

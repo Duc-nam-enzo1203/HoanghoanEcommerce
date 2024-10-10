@@ -16,9 +16,8 @@
 
 .container-news-item {
   display: flex;
-  gap: 32px;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: start;
 }
 
 .box-item-news {
@@ -90,10 +89,6 @@
     padding: 50px 25px;
   }
 
-  .container-news-item {
-    gap: 12px;
-  }
-
   .box-content h5 {
     font-size: 14px;
   }
@@ -105,9 +100,6 @@
   }
   .box-item-news {
     width: 100%;
-  }
-  .container-news-item {
-    gap: 16px;
   }
 
   .box-content h5 {

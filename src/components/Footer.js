@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className="d-flex ">
+    <footer className="d-flex justify-content-center">
       <div className="container-lg row p-0 box-footer d-flex w-100 justify-content-between">
         <div className="col-12 col-md-4">
           <h5 style={{ color: "#fff" }}>Thông tin chung</h5>

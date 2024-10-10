@@ -9,6 +9,31 @@ import { ToastContainer } from "react-toastify";
 import publicRoutes from "./router";
 import ScrollToTop from "./components/ScrollToTop";
 import "./style/style.css";
+
+// filebase
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyAhywXXJ401sIiII039xWEgFHjFOmK_6Js",
+  authDomain: "hoanghoan-e2b92.firebaseapp.com",
+  projectId: "hoanghoan-e2b92",
+  storageBucket: "hoanghoan-e2b92.appspot.com",
+  messagingSenderId: "537222021714",
+  appId: "1:537222021714:web:85abe3376e018a51ab958b",
+  measurementId: "G-H75PF5F2F9",
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
+//done
 function App() {
   // Call Products API
   const [products, setProducts] = useState([]);
@@ -80,7 +105,7 @@ function App() {
   const [postsData, setPostsData] = useState(news);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage, setpostsPerPage] = useState(9);
+  const [postsPerPage, setpostsPerPage] = useState(1);
 
   const indexOfLastPost = currentPage * postsPerPage; // =6
   const indexOfFirstPost = indexOfLastPost - postsPerPage; // = 6 - 3 = 3
