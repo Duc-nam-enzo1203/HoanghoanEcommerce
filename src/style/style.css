@@ -420,7 +420,7 @@ header > div img {
     transform: translateX(0px);
     background-color: #bd945f;
     position: fixed;
-    z-index: 1;
+    z-index: 3;
   }
 
   .menu-wrap .toggler:checked ~ .menu > div > ul {
@@ -790,6 +790,7 @@ header > div img {
 .list-new {
   display: flex;
   flex-direction: column;
+
   gap: 12px;
 }
 
@@ -797,12 +798,6 @@ header > div img {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  gap: 8px;
-}
-
-.box-footer {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 8px;
 }
 
@@ -1046,16 +1041,6 @@ header > div img {
   position: relative;
 }
 
-.container_6 .container-lg {
-  margin: 0 auto;
-  z-index: 3 !important;
-}
-
-.title-contact {
-  display: flex;
-  flex-direction: column;
-}
-
 .title-contact h4 {
   font-size: 18px;
   color: #fff;
@@ -1084,24 +1069,8 @@ header > div img {
   z-index: 3;
 }
 
-form {
-  margin: 0 !important;
-  position: relative;
-}
-
-.box-form h4 {
-  font-size: 18px;
-  color: #fff;
-  font-weight: 400;
-}
-
-.form-group {
-  padding: 3px;
-}
-
 #invalid_email {
   font-size: 16px;
-
   font-weight: 400;
   position: absolute;
   left: 0;
@@ -1192,25 +1161,6 @@ input .error {
   opacity: 1;
 }
 
-form > div {
-  margin: 0;
-  padding: 0;
-}
-
-.box-form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.form-message {
-  position: absolute;
-  font-size: 14px;
-  color: rgb(255, 255, 255);
-
-  font-weight: 400;
-}
-
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   [alt="ghe"] {
     display: none;
@@ -1227,10 +1177,6 @@ form > div {
   .title-contact {
     width: 50%;
   }
-
-  .box-form {
-    width: 50%;
-  }
 }
 
 @media screen and (max-width: 767px) {
@@ -1245,7 +1191,7 @@ form > div {
   .container_6 .container-lg {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 20px;
   }
 
   .container_6 .container-lg > .col-2 {
@@ -1255,62 +1201,12 @@ form > div {
   .title-contact {
     width: 100%;
   }
-
-  .box-form {
-    width: 100%;
-  }
 }
 
 footer {
-  padding: 100px 50px;
+  padding: 50px 50px;
   background-color: #414141;
   position: relative;
-}
-
-footer > .container-lg {
-  margin: 0 auto;
-}
-
-footer > div {
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-}
-
-footer > .container-lg > div {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  width: fit-content;
-}
-
-footer div div h2 {
-  font-size: 18px;
-  color: #fff;
-  position: relative;
-  padding-bottom: 8px;
-  text-transform: uppercase;
-}
-
-footer div div h2::after {
-  content: "";
-  background-color: #fff;
-  width: 40%;
-  position: absolute;
-  height: 3px;
-  bottom: 0;
-  left: 0;
-}
-
-footer div div h4 {
-  font-size: 24px;
-  text-transform: uppercase;
-  color: #fff;
-}
-
-footer div div ul {
-  margin-top: 12px;
-  padding: 0;
 }
 
 footer div div ul li {
@@ -1324,7 +1220,6 @@ footer div div ul li {
 footer div div ul li a {
   text-decoration: none;
   color: #fff !important;
-
   font-weight: 300;
 }
 
@@ -1350,62 +1245,18 @@ footer div div ul li a {
     padding: 50px 25px;
     justify-content: space-between;
   }
-
-  footer > .container-lg > div {
-    width: 33%;
-    gap: 4px;
-  }
-
-  footer div div h4 {
-    font-size: 18px;
-  }
-
-  footer div div h2 {
-    font-size: 16px;
-  }
-
-  footer div div ul {
-    margin-top: 6px;
-  }
 }
 
 @media screen and (max-width: 767px) {
   footer {
     padding: 30px 15px;
   }
-
-  footer > .container-lg {
-    margin: 0 !important;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    text-align: center;
-  }
-
-  footer div div h4 {
-    font-size: 18px;
-  }
-
-  footer div div h2 {
-    font-size: 16px;
-  }
-
-  footer div div ul {
-    margin-top: 0 !important;
-  }
-  footer > .container-lg > div {
-    max-width: 100% !important;
-    width: 100% !important;
-    gap: 4px;
-  }
-
   .social {
     margin: 0 auto !important;
   }
-
-  footer div div h2::after {
-    left: 50%;
-    transform: translateX(-50%);
+  .f-about,
+  .f-contact {
+    justify-content: start !important;
   }
 }
 

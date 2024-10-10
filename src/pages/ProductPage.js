@@ -137,23 +137,24 @@ function ProductPage({ renderProducts, renderCategories }) {
             style={{
               width: "100%",
               display: "flex",
-              gap: "12px",
               flexWrap: "wrap",
             }}
           >
             {displayedProducts.map((product, index) => (
-              <Product
-                key={index}
-                product={{
-                  id: product.id,
-                  cid: product.cid,
-                  img: `http://apixm.devmaster.vn${product.image}`,
-                  title: product.title,
-                  priceOld: product.priceOld,
-                  priceNew: product.priceNew,
-                  size: product.size,
-                }}
-              />
+              <div className="col-12 col-md-6 col-lg-3 p-1">
+                <Product
+                  key={index}
+                  product={{
+                    id: product.id,
+                    cid: product.cid,
+                    img: `http://apixm.devmaster.vn${product.image}`,
+                    title: product.title,
+                    priceOld: product.priceOld,
+                    priceNew: product.priceNew,
+                    size: product.size,
+                  }}
+                />
+              </div>
             ))}
           </div>
         </div>

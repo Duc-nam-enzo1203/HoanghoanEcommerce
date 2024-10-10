@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer>
-      <div className="container-lg row box-footer">
-        <div>
-          <h4>Thông tin chung</h4>
+    <footer className="d-flex ">
+      <div className="container-lg row p-0 box-footer d-flex w-100 justify-content-between">
+        <div className="col-12 col-md-4">
+          <h5 style={{ color: "#fff" }}>Thông tin chung</h5>
           <h5 style={{ color: "#fff" }}>Công ty TNHH Hoàng Hoan</h5>
-          <ul>
+          <ul className="p-0 mt-lg-3">
             <li>
               <i className="fa-solid fa-phone" />
               <a href="tel:0866634302" id="#phone">
@@ -25,35 +25,51 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-        <div>
-          <h4>Về chúng tôi</h4>
-          <ul>
-            <li>
-              <Link to="/">Trang chủ</Link>
-            </li>
-            <li>
-              <Link to="/Information">Giới thiệu</Link>
-            </li>
-            <li>
-              <Link to="/Product">Sản phẩm</Link>
-            </li>
-            <li>
-              <Link to="/News">Tin tức</Link>
-            </li>
-            <li>
-              <Link to="/Partner">Đối tác</Link>
-            </li>
-            <li>
-              <Link to="/Contact">Liên hệ</Link>
-            </li>
-          </ul>
+        <div className="f-about col-12 col-md-4 d-flex justify-content-center">
+          <div>
+            <h5 style={{ color: "#fff" }}>Về chúng tôi</h5>
+            <ul className="p-0">
+              <li>
+                <Link to="/" className="p-0">
+                  Trang chủ
+                </Link>
+              </li>
+              <li>
+                <Link to="/Information" className="p-0">
+                  Giới thiệu
+                </Link>
+              </li>
+              <li>
+                <Link to="/Product" className="p-0">
+                  Sản phẩm
+                </Link>
+              </li>
+              <li>
+                <Link to="/News" className="p-0">
+                  Tin tức
+                </Link>
+              </li>
+              <li>
+                <Link to="/Partner" className="p-0">
+                  Đối tác
+                </Link>
+              </li>
+              <li>
+                <Link to="/Contact" className="p-0">
+                  Liên hệ
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div>
-          <h4>Kết nối với chúng tôi</h4>
-          <div className="social">
-            <i className="fa-brands fa-square-facebook fa-2x" />
-            <i className="fa-brands fa-square-instagram fa-2x" />
-            <i className="fa-regular fa-envelope fa-2x" />
+        <div className="f-contact col-12 col-md-4 d-flex justify-content-end">
+          <div>
+            <h5 style={{ color: "#fff" }}>Kết nối với chúng tôi</h5>
+            <div className="social mt-md-2">
+              <i className="fa-brands fa-square-facebook fa-2x" />
+              <i className="fa-brands fa-square-instagram fa-2x" />
+              <i className="fa-regular fa-envelope fa-2x" />
+            </div>
           </div>
         </div>
       </div>

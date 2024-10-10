@@ -190,7 +190,7 @@ export default function HomePage({
   let elementPartners = renderPartners.map((item, index) => {
     return (
       <div className="col-md-1" key={index}>
-        <img src={item.img} alt="" />
+        <img src={item.img} alt="" className="w-100" />
       </div>
     );
   });
@@ -321,7 +321,7 @@ export default function HomePage({
         <div className="container-lg p-0">
           <TitleSection title={"Tin tức"} />
           <Container className="mt-lg-4 p-0">
-            <Row className="d-flex">
+            <Row className="d-flex align-items-start">
               <Col className="col-12 col-lg-8 boxFirst_post">
                 {elementFirst}
               </Col>
@@ -350,22 +350,29 @@ export default function HomePage({
           <Slider {...settingsPartner}>{elementPartners}</Slider>
         </div>
       </section>
-      <section id="lienhe" className="Block container_6">
+      <section
+        id="lienhe"
+        className="Block container_6 d-flex justify-content-center"
+      >
         <img src="./img/lienhe-1-removebg-preview.png" alt="ghe" />
-        <div className="container-lg row  p-0">
-          <div className="col-2" />
-          <div className="col-5 title-contact">
+        <div className="container-lg row m-0-auto justify-content-center p-0 ">
+          <div className="col-12 col-md-4 title-contact p-0">
             <h5>Trải nghiệm dịch vụ</h5>
             <h4>
               <span>Cùng Hoàng Hoan </span>ngay
             </h4>
             <div className="diver" />
           </div>
-          <div className="col-5 box-form">
+          <div className="col-12 col-md-4 box-form p-0">
             <h5>Thông tin liên hệ</h5>
-            <div className="form">
-              <form action="" method="post" className="row" id="form">
-                <div className="form-group col-lg-9 col-12">
+            <div className="form p-md-0 pt-2 mt-md-2">
+              <form
+                action=""
+                method="post"
+                className="row p-0 align-items-center"
+                id="form"
+              >
+                <div className="form-group col-lg-9 col-12 p-0 ">
                   <input
                     type="text"
                     placeholder="Email/Phone *"
@@ -375,8 +382,13 @@ export default function HomePage({
                   />
                   <p className="error" id="invalid_email" />
                 </div>
-                <div className="submit col-lg-3 col-12">
-                  <input type="submit" defaultValue="Gửi" id="submit" />
+                <div className="submit col-lg-3 col-4 mt-2 mt-lg-0 p-lg-1 p-0">
+                  <input
+                    type="submit"
+                    defaultValue="Gửi"
+                    id="submit"
+                    className="w-100"
+                  />
                 </div>
               </form>
             </div>

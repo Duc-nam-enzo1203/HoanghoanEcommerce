@@ -31,7 +31,7 @@ const Product = ({ product }) => {
   };
 
   return (
-    <Card key={id} className="m-0 p-0 w-100">
+    <Card key={id} className="w-100">
       <Card.Img
         variant="top"
         src={img}
